@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Filter, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { Play, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const OurWork = () => {
@@ -260,10 +260,10 @@ const OurWork = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '50M+', label: 'Total Reach', icon: '👥' },
-              { number: '15.7%', label: 'Avg. Engagement', icon: '❤️' },
-              { number: '200+', label: 'Campaigns', icon: '🚀' },
-              { number: '95%', label: 'Client Satisfaction', icon: '⭐' }
+              { number: '0', label: 'Total Reach', icon: '👥' },
+              { number: '0%', label: 'Avg. Engagement', icon: '❤️' },
+              { number: '0', label: 'Campaigns', icon: '🚀' },
+              { number: '0%', label: 'Client Satisfaction', icon: '⭐' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -316,13 +316,13 @@ const OurWork = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Link to="/get-in-touch" className="bg-white text-primary-600 font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+            <Link to="/get-in-touch" target='_top' className="bg-white text-primary-600 font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
               <span>Start Your Campaign</span>
               <ArrowRight size={20} />
             </Link>
-            <Link to="/portfolio" className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-primary-600 transition-all duration-300">
+            {/* <Link to="/portfolio" className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-primary-600 transition-all duration-300">
               View More Work
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
       </section>

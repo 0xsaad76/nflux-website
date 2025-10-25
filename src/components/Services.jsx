@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Users, TrendingUp, Target, Zap, BarChart3, Crown, Play, ArrowRight, Instagram, Youtube, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { ArrowRight, Crown, Facebook, Instagram, Linkedin, Target, TrendingUp, Users, Youtube, Zap } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
@@ -132,6 +131,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
+
                 whileHover={{ y: -10 }}
               >
                 <div className="glass-card p-8 h-full relative overflow-hidden transition-all duration-500 group-hover:border-white/30">
@@ -381,13 +381,13 @@ const Services = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Link to="/get-in-touch" className="bg-white text-primary-600 font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+            <Link to="/get-in-touch" target='_top' className="bg-white text-primary-600 font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
               <span>Start Your Project</span>
               <ArrowRight size={20} />
             </Link>
-            <Link to="/portfolio" className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-primary-600 transition-all duration-300">
+            {/* <Link to="/portfolio" className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-primary-600 transition-all duration-300">
               View Our Work
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
       </section>

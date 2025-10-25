@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, ArrowRight, Quote } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
+import { ArrowRight, ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
@@ -235,7 +235,7 @@ const Portfolio = () => {
                     </span>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">{testimonial.author}</div>
+                    <div className="font-semibold text-black">{testimonial.author}</div>
                     <div className="text-gray-400 text-sm">{testimonial.position}</div>
                   </div>
                 </div>
@@ -251,7 +251,10 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Link to="/get-in-touch" className="btn-primary inline-flex items-center space-x-2 text-lg px-8 py-4">
+            <Link to="/get-in-touch" 
+              target='_top'
+              className="btn-primary inline-flex items-center space-x-2 text-lg px-8 py-4"
+              >
               <span>Get Started</span>
               <ArrowRight size={20} />
             </Link>
@@ -260,7 +263,7 @@ const Portfolio = () => {
       </section>
 
       {/* Portfolio Grid Preview */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-black to-gray-900">
+      {/* <section className="py-20 lg:py-32 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -300,7 +303,7 @@ const Portfolio = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

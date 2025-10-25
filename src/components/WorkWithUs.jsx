@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { Users, Star, TrendingUp, Award, Check, ArrowRight, Instagram, Youtube, Camera } from 'lucide-react';
+import { ArrowRight, Award, Check, Facebook, Instagram, Star, TrendingUp, Users, Youtube } from 'lucide-react';
+import { useState } from 'react';
 
 const WorkWithUs = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ const WorkWithUs = () => {
 
   const platforms = [
     { name: 'Instagram', icon: Instagram, color: 'from-pink-500 to-purple-500' },
-    { name: 'TikTok', icon: Camera, color: 'from-gray-800 to-black' },
+    { name: 'Facebook', icon: Facebook, color: 'from-blue-800 to-black' },
     { name: 'YouTube', icon: Youtube, color: 'from-red-500 to-red-600' }
   ];
 
@@ -61,8 +62,38 @@ const WorkWithUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Creator application submitted:', formData);
-    // Add form submission logic here
+    try {
+      await emailjs.send(
+        'service_c69gjtg', 
+        'template_q5ggf3o',
+        {
+          to_email: 'saadabban76@gmail.com',
+          from_name: formData.name,
+          from_email: formData.email,
+          instagram: formData.instagram,
+          followers: formData.followers,
+          niche: formData.niche,
+          experience: formData.experience,
+          portfolio: formData.portfolio,
+          why: formData.why,
+        },
+        'WCwXaL1cYZkckW-vv'
+      );
+      alert('Application submitted successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        instagram: '',
+        followers: '',
+        niche: '',
+        experience: '',
+        portfolio: '',
+        why: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to submit application. Please try again.');
+    }
   };
 
   return (
@@ -123,10 +154,6 @@ const WorkWithUs = () => {
             <a href="#apply" className="btn-primary flex items-center space-x-2 text-lg px-8 py-4">
               <span>Apply Now</span>
               <ArrowRight size={20} />
-            </a>
-            <a href="#benefits" className="btn-secondary flex items-center space-x-2 text-lg px-8 py-4">
-              <Users size={20} />
-              <span>Learn More</span>
             </a>
           </motion.div>
         </div>
@@ -279,7 +306,7 @@ const WorkWithUs = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -295,7 +322,7 @@ const WorkWithUs = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
                   placeholder="Enter your email"
                 />
               </div>
@@ -313,7 +340,7 @@ const WorkWithUs = () => {
                   value={formData.instagram}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
                   placeholder="@yourusername"
                 />
               </div>
@@ -328,7 +355,7 @@ const WorkWithUs = () => {
                   value={formData.followers}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white"
+                  className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white"
                 >
                   <option value="">Select range</option>
                   <option value="1k-10k">1K - 10K</option>
@@ -351,7 +378,7 @@ const WorkWithUs = () => {
                   value={formData.niche}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white"
+                  className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white"
                 >
                   <option value="">Select your niche</option>
                   <option value="fashion">Fashion & Style</option>
@@ -374,7 +401,7 @@ const WorkWithUs = () => {
                   name="experience"
                   value={formData.experience}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white"
+                  className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white"
                 >
                   <option value="">Select experience level</option>
                   <option value="none">No prior experience</option>
@@ -383,21 +410,6 @@ const WorkWithUs = () => {
                   <option value="experienced">20+ collaborations</option>
                 </select>
               </div>
-            </div>
-
-            <div>
-              <label htmlFor="portfolio" className="block text-sm font-medium text-gray-300 mb-2">
-                Portfolio/Media Kit URL
-              </label>
-              <input
-                type="url"
-                id="portfolio"
-                name="portfolio"
-                value={formData.portfolio}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500"
-                placeholder="https://your-portfolio.com"
-              />
             </div>
 
             <div>
@@ -411,7 +423,7 @@ const WorkWithUs = () => {
                 onChange={handleInputChange}
                 required
                 rows={4}
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500 resize-none"
+                className="w-full px-4 py-3 bg-black border border-white/20 rounded-lg focus:border-accent-500 focus:outline-none transition-colors text-white placeholder-gray-500 resize-none"
                 placeholder="Tell us about your goals and why you'd be a great fit for our creator network..."
               />
             </div>

@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Play,
@@ -43,7 +42,7 @@ const Home = () => {
   const testimonials = [
     {
       text: "NFLUZ transformed our social media presence completely. Their UGC campaigns generated 300% more engagement than our previous strategies.",
-      author: "Saad",
+      author: "Syed",
       position: "Marketing Director, TechCorp",
     },
     {
@@ -125,6 +124,7 @@ const Home = () => {
             >
               <Link
                 to="/get-in-touch"
+                target="_top"
                 className="btn-primary flex items-center space-x-2 text-lg px-8 py-4"
               >
                 <span>Get Started</span>
@@ -147,7 +147,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <motion.div
                 key={stat.label}
                 className="text-center"
@@ -338,7 +338,7 @@ const Home = () => {
                     </span>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">
+                    <div className="font-semibold text-black">
                       {testimonial.author}
                     </div>
                     <div className="text-gray-400 text-sm">
@@ -383,6 +383,7 @@ const Home = () => {
           >
             <Link
               to="/get-in-touch"
+              target="_top"
               className="bg-white text-primary-600 font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
             >
               <span>Get Started Now</span>

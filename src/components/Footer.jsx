@@ -107,10 +107,10 @@ const Footer = () => {
               © 2025 NFLUZ. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-accent-400 transition-colors">
+              <a href="/privacy-policy#" className="text-gray-400 hover:text-accent-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-accent-400 transition-colors">
+              <a href="/terms-and-conditions#" className="text-gray-400 hover:text-accent-400 transition-colors">
                 Terms of Service
               </a>
             </div>

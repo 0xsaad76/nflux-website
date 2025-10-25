@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageCircle, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Send, MessageCircle, ArrowRight } from 'lucide-react';
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
@@ -69,7 +68,7 @@ const GetInTouch = () => {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-20 lg:py-32">
+      <section id="#form" className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -332,7 +331,7 @@ const GetInTouch = () => {
               },
               {
                 question: "What's the minimum budget for working with NFLUZ?",
-                answer: "Our campaigns start at $5,000 per month, which includes strategy development, content creation, and campaign management. We'll work with you to create a custom package that fits your budget."
+                answer: "Our campaigns start at $50 per month, which includes strategy development, content creation, and campaign management. We'll work with you to create a custom package that fits your budget."
               },
               {
                 question: "Do you work with businesses in all industries?",

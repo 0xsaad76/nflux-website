@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -9,6 +10,10 @@ import Services from './components/Services';
 import OurWork from './components/OurWork';
 import GetInTouch from './components/GetInTouch';
 import WorkWithUs from './components/WorkWithUs';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsandConditions from './components/TermsandConditions';
+
+emailjs.init('WCwXaL1cYZkckW-vv');
 
 function App() {
   return (
@@ -23,6 +28,8 @@ function App() {
             <Route path="/our-work" element={<OurWork />} />
             <Route path="/get-in-touch" element={<GetInTouch />} />
             <Route path="/work-with-us" element={<WorkWithUs />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsandConditions />} />
           </Routes>
         </main>
         <Footer />
