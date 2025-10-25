@@ -118,7 +118,7 @@ const Home = () => {
             </motion.div>
 
             <motion.p
-              className="text-lg -mt-20 lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg lg:-mt-20 -mt-10 lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
