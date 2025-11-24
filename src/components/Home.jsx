@@ -10,7 +10,7 @@ import {
   Quote,
 } from "lucide-react";
 import HeroBackground from "../assets/hero-background.jpg";
-import HeroVideo from "../assets/nfluz-video.mp4";
+import HeroVideo from "../assets/home-video.mp4";
 
 const Home = () => {
   const services = [
@@ -98,7 +98,7 @@ const Home = () => {
           >
             {/* Video hero: autoplaying, muted, looped, responsive */}
             <motion.div
-              className="mx-auto mb-1 w-full max-w-4xl rounded-2xl overflow-hidden"
+              className="mx-auto mb-1 w-full max-sm:mt-15 max-w-4xl rounded-2xl overflow-hidden"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -118,7 +118,7 @@ const Home = () => {
             </motion.div>
 
             <motion.p
-              className="text-lg lg:-mt-20 -mt-10 lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg lg:mt-5 mt-10 lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
