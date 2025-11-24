@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

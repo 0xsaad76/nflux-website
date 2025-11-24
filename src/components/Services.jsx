@@ -1,6 +1,7 @@
 import { ArrowRight, Crown, Facebook, Instagram, Linkedin, Target, TrendingUp, Users, Youtube, Zap } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Services = () => {
   const [hoveredCard, setHoveredCard] = useState(null);

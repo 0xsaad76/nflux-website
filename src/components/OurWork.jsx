@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Play, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 
 const OurWork = () => {
   const [activeCategory, setActiveCategory] = useState('All');

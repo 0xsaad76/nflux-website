@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Mail, Send, MessageCircle, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+
 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
